@@ -1,7 +1,6 @@
 name: Parent Workflow
 
-on:
- workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   trigger_child_workflows:
