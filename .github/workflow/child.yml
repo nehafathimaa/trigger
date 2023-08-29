@@ -1,0 +1,25 @@
+name: Child Workflow - Install Maven
+
+on:
+  repository_dispatch:
+    types: [install-maven]
+
+jobs:
+  install_maven:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Maven
+        run: |
+          # Install Maven here
+
+      - name: Set Maven Output
+        id: maven-output
+        run: |
+          echo "::set-output name=installed::true"
+
+  outputs:
+    installed: ${{ steps.maven-output.outputs.installed }}
